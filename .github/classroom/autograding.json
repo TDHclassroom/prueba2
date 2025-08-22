@@ -1,0 +1,114 @@
+{
+  "tests": [
+    {
+      "name": "Test Suma (Addition)",
+      "setup": "composer install",
+      "run": "php -d xdebug.mode=off vendor/bin/phpunit --filter testAddition --testdox",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0.16
+    },
+    {
+      "name": "Test Suma 2 (Addition)",
+      "setup": "composer install",
+      "run": "php -d xdebug.mode=off vendor/bin/phpunit --filter testAddition --testdox",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0.18
+    },
+    {
+      "name": "Test Resta (Subtraction)",
+      "setup": "",
+      "run": "php -d xdebug.mode=off vendor/bin/phpunit --filter testSubtraction --testdox",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0.16
+    },
+    {
+      "name": "Test Multiplicación (Multiplication)",
+      "setup": "",
+      "run": "php -d xdebug.mode=off vendor/bin/phpunit --filter testMultiplication --testdox",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0.16
+    },
+    {
+      "name": "Test División (Division)",
+      "setup": "",
+      "run": "php -d xdebug.mode=off vendor/bin/phpunit --filter testDivision --testdox",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0.16
+    },
+    {
+      "name": "Test División por Cero (Division by Zero)",
+      "setup": "",
+      "run": "php -d xdebug.mode=off vendor/bin/phpunit --filter testDivisionByZero --testdox",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0.16
+    },
+    {
+      "name": "Tests con Data Provider",
+      "setup": "",
+      "run": "php -d xdebug.mode=off vendor/bin/phpunit --filter testCalculationsWithDataProvider --testdox",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0.4
+    },
+    {
+      "name": "Verificación de Estilo de Código PSR-12",
+      "setup": "",
+      "run": "vendor/bin/phpcs exercises/Calculator.php --standard=PSR12",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0.24
+    },
+    {
+      "name": "Análisis Estático con PHPStan",
+      "setup": "",
+      "run": "vendor/bin/phpstan analyse exercises/Calculator.php --level=5 --no-progress",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 15,
+      "points": 0.24
+    },
+    {
+      "name": "Todos los Tests - Verificación Final",
+      "setup": "",
+      "run": "php -d xdebug.mode=off vendor/bin/phpunit --testdox",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 0.32
+    },
+    {
+      "name": "Test de Documentación",
+      "setup": "",
+      "run": "test -f README.md && echo \"README.md exists\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 0.1
+    }
+  ]
+}

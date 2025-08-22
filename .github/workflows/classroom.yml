@@ -1,0 +1,71 @@
+name: GitHub Classroom Workflow
+
+on: 
+  push:
+    branches:
+    - '*'
+  pull_request:
+    branches:
+    - '*'
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup PHP 8.2
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite
+          tools: composer, phpunit, phpcs, phpstan
+          coverage: none
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict --no-check-lock
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-dev --optimize-autoloader
+
+      - name: Install dev dependencies for testing
+        run: composer install --prefer-dist --no-progress --optimize-autoloader
+
+      - name: Show PHP and Composer versions
+        run: |
+          php --version
+          composer --version
+          
+      - name: List installed packages
+        run: composer show
+
+      - name: Run Autograding
+        uses: education/autograding@v1
+        id: autograder
+        continue-on-error: true
+
+      - name: Generate detailed test report
+        run: |
+          echo "## 📊 Resultados Detallados de Testing" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Tests Ejecutados:" >> $GITHUB_STEP_SUMMARY
+          vendor/bin/phpunit --testdox >> $GITHUB_STEP_SUMMARY || true
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Análisis de Código:" >> $GITHUB_STEP_SUMMARY
+          vendor/bin/phpstan analyse exercises/ --level=5 --no-progress >> $GITHUB_STEP_SUMMARY || true
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Verificación de Estilo:" >> $GITHUB_STEP_SUMMARY
+          vendor/bin/phpcs exercises/ --standard=PSR12 >> $GITHUB_STEP_SUMMARY || true
+
+      - name: Run feedback
+        uses: education/autograding@v1
+        if: steps.autograder.outcome != 'success'
+        with:
+          continue-on-error: true

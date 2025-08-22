@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/workspaces/prueba/phpunit.xml" tests="9" assertions="13" errors="0" failures="0" skipped="0" time="0.003689">
+    <testsuite name="Exercises" tests="9" assertions="13" errors="0" failures="0" skipped="0" time="0.003689">
+      <testsuite name="Tests\CalculatorTest" file="/workspaces/prueba/tests/CalculatorTest.php" tests="9" assertions="13" errors="0" failures="0" skipped="0" time="0.003689">
+        <testcase name="testAddition" file="/workspaces/prueba/tests/CalculatorTest.php" line="17" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.002227"/>
+        <testcase name="testSubtraction" file="/workspaces/prueba/tests/CalculatorTest.php" line="23" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000131"/>
+        <testcase name="testMultiplication" file="/workspaces/prueba/tests/CalculatorTest.php" line="29" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000119"/>
+        <testcase name="testDivision" file="/workspaces/prueba/tests/CalculatorTest.php" line="35" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000110"/>
+        <testcase name="testDivisionByZero" file="/workspaces/prueba/tests/CalculatorTest.php" line="41" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000415"/>
+        <testsuite name="Tests\CalculatorTest::testCalculationsWithDataProvider" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.000687">
+          <testcase name="testCalculationsWithDataProvider with data set #0" file="/workspaces/prueba/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000183"/>
+          <testcase name="testCalculationsWithDataProvider with data set #1" file="/workspaces/prueba/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000166"/>
+          <testcase name="testCalculationsWithDataProvider with data set #2" file="/workspaces/prueba/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000178"/>
+          <testcase name="testCalculationsWithDataProvider with data set #3" file="/workspaces/prueba/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000160"/>
+        </testsuite>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
