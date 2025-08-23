@@ -1,11 +1,11 @@
-# 🧪 PHP Ejercicios - Entorno de prueba
+# 🧪 PHP Exercises - Testing Environment
 
 Este es un entorno de desarrollo completo para ejercicios PHP con tests automáticos, configurado con GitHub Codespaces y devcontainer.
 
 ## 🚀 Características
 
 - **PHP 8.2** con extensiones completas
-- **PHPUnit** para testing automático
+- **PHPUnit** para testing automático  
 - **Composer** para gestión de dependencias
 - **Análisis estático** con PHPStan
 - **Code Sniffer** para estándares de código
@@ -16,22 +16,22 @@ Este es un entorno de desarrollo completo para ejercicios PHP con tests automát
 ## 📁 Estructura del Proyecto
 
 ```
-tu-repositorio/
-├── .devcontainer/          # Configuración del devcontainer (no tocar)
-├── exercises/              # 📝 Ejercicios para completar
-├── tests/                  # 🧪 Tests automáticos (no tocar)
+$PROJECT_ROOT/
+├── .devcontainer/          # Configuración del devcontainer 
+├── exercises/              # 📝 Ejercicios para completar (trabajar aquí)
+├── tests/                  # 🧪 Tests automáticos
 ├── public/                 # 🌐 Archivos web públicos
-├── vendor/                 # 📦 Dependencias de Composer (no tocar)
-├── phpunit.xml            # ⚙️ Configuración de PHPUnit (no tocar)
-├── composer.json          # 📋 Dependencias del proyecto (no tocar)
-└── README.md              # 📚 Este archivo (no tocar)
+├── vendor/                 # 📦 Dependencias de Composer
+├── phpunit.xml            # ⚙️ Configuración de PHPUnit
+├── composer.json          # 📋 Dependencias del proyecto
+└── README.md              # 📚 Este archivo
 ```
 
 ## 🏃‍♂️ Inicio Rápido
 
 ### 1. Desarrollo de Ejercicios
 
-Los ejercicios deberán ser colocados en la carpeta `exercises/`. Ejemplo:
+Los ejercicios están en la carpeta `exercises/`. Ejemplo:
 
 ```php
 // exercises/Calculator.php
@@ -46,7 +46,27 @@ class Calculator {
 }
 ```
 
-### 2. Comandos Útiles que puedes utilizar
+### 2. Tests Automáticos
+
+Los tests están en la carpeta `tests/`:
+
+```php
+// tests/CalculatorTest.php
+<?php
+namespace Tests;
+
+use PHPUnit\Framework\TestCase;
+use Exercises\Calculator;
+
+class CalculatorTest extends TestCase {
+    public function testAddition(): void {
+        $calc = new Calculator();
+        $this->assertEquals(5, $calc->add(2, 3));
+    }
+}
+```
+
+### 3. Comandos Útiles
 
 ```bash
 # Ejecutar todos los tests
@@ -79,7 +99,6 @@ Una vez iniciado el codespace, puedes acceder a:
 ## 🔧 Extensiones Incluidas
 
 ### PHP Development
-
 - **Intelephense** - IntelliSense avanzado para PHP
 - **PHP Debug** - Debugging con Xdebug
 - **PHPTools** - Herramientas completas de PHP
@@ -87,66 +106,68 @@ Una vez iniciado el codespace, puedes acceder a:
 - **PHPUnit** - Integración con tests
 
 ### Development Tools
-
 - **Live Server** - Hot-reload para desarrollo web
 - **Prettier** - Formateo de código
 - **Test Explorer** - Vista de tests en el sidebar
 
 ### GitHub Integration
-
 - **GitHub Pull Requests** - Gestión de PRs
+- **GitHub Copilot** - Asistente de código IA
 
 ## 📊 Testing Workflow
 
 ### Para Estudiantes:
-
 1. Abrir el ejercicio en `exercises/`
 2. Implementar la solución
 3. Ejecutar `composer test` para verificar
 4. Ver resultados en la interfaz web
+
+### Para Profesores:
+1. Crear nuevos ejercicios en `exercises/`
+2. Crear tests correspondientes en `tests/`
+3. Colocar soluciones en `solutions/` como referencia
+4. Los estudiantes heredarán automáticamente el entorno
 
 ## 🎯 Flujo de Corrección Automática
 
 1. **Desarrollo**: Estudiante implementa en `exercises/`
 2. **Testing**: Sistema ejecuta tests automáticamente
 3. **Feedback**: Resultados visibles en tiempo real
+4. **Evaluación**: Profesor puede comparar con `solutions/`
 
-### Otros composer Scripts
+## ⚙️ Configuración Avanzada
 
+### PHPUnit Configuration
+El archivo `phpunit.xml` está configurado para:
+- Tests con colores y formato testdox
+- Coverage reports
+- Exportación de resultados a HTML y XML
+
+### Composer Scripts
 - `test`: Ejecuta PHPUnit básico
-- `test-watch`: PHPUnit con formato detallado
+- `test-watch`: PHPUnit con formato detallado  
 - `analyze`: PHPStan level 8
 - `style-check`: PHP_CodeSniffer PSR-12
 - `style-fix`: PHP_CodeBulkFixer automático
 - `serve`: Servidor PHP en puerto 8000
 
-## 🐛 Opciones rápidas para solución de problemas
+## 🐛 Troubleshooting
 
 ### Tests no se ejecutan
-
 ```bash
 composer install
 composer dump-autoload
 ```
 
 ### Servidor no inicia
-
 ```bash
 php -S localhost:8000 -t public
 ```
 
 ### Problemas de permisos
-
 ```bash
-sudo chmod -R 755 ./
+sudo chmod -R 755 $PROJECT_ROOT
 ```
-
-## Notas Importantes
-
-- ⚠️ **No modificar los archivos de test** - Solo implementar en `exercises/`
-- ⚠️ **Usar excepciones apropiadas** - `InvalidArgumentException` para división por cero
-- ⚠️ **Seguir la estructura existente** - No cambiar signatures de métodos
-- ⚠️ **Commitear frecuentemente** - El autograding se ejecuta en cada push
 
 ## 📚 Recursos Adicionales
 

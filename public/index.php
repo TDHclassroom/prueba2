@@ -39,17 +39,18 @@
 
         <h2>Acciones Rápidas</h2>
         <a href="test-results.php" class="btn">Ver Resultados de Tests</a>
+        <a href="autograding-report.php" class="btn">Ver Informe de Autograding</a>
         <a href="phpinfo.php" class="btn">PHP Info</a>
-        <a href="autograding-report.php" class="btn">Informe de Autocalificación</a>
 
         <h2>Estructura del Proyecto</h2>
         <pre>
-<?php echo basename(dirname(__DIR__)); ?>/
+$PROJECT_ROOT/
 ├── exercises/          # Ejercicios para completar
-├── tests/             # Tests automáticos (no tocar)
-├── public/            # Archivos web públicos (no tocar)
-├── phpunit.xml        # Configuración de PHPUnit (no tocar)
-└── composer.json      # Dependencias del proyecto (no tocar)
+├── solutions/          # Soluciones de referencia
+├── tests/             # Tests automáticos
+├── public/            # Archivos web públicos
+├── phpunit.xml        # Configuración de PHPUnit
+└── composer.json      # Dependencias del proyecto
         </pre>
 
         <h2>Comandos Útiles</h2>

@@ -38,6 +38,7 @@
         </div>
         
         <button onclick="runTests()" class="btn">🧪 Ejecutar Tests</button>
+         <a href="autograding-report.php" class="btn">Ver Informe de Autograding</a>
         <a href="index.php" class="btn">← Volver al Inicio</a>
         
         <h2>Resultados</h2>

@@ -22,27 +22,11 @@
         }
     },
     "scripts": {
-        "test": "php -d xdebug.mode=off vendor/bin/phpunit",
-        "test-watch": "php -d xdebug.mode=off vendor/bin/phpunit --testdox",
+        "test": "phpunit",
+        "test-watch": "phpunit --testdox",
         "analyze": "phpstan analyse exercises solutions --level=8",
         "style-check": "phpcs exercises solutions --standard=PSR12",
         "style-fix": "phpcbf exercises solutions --standard=PSR12",
-        "serve": "php -S localhost:8000 -t public",
-        "autograding": "scripts/secure-grading-report.sh",
-        "autograding-safe": "scripts/secure-grading-report.sh",
-        "grade": "scripts/manage-autograding.sh run",
-        "validate-config": "scripts/manage-autograding.sh validate",
-        "test-individual": [
-            "php -d xdebug.mode=off vendor/bin/phpunit --filter testAddition --testdox",
-            "php -d xdebug.mode=off vendor/bin/phpunit --filter testSubtraction --testdox", 
-            "php -d xdebug.mode=off vendor/bin/phpunit --filter testMultiplication --testdox",
-            "php -d xdebug.mode=off vendor/bin/phpunit --filter testDivision --testdox",
-            "php -d xdebug.mode=off vendor/bin/phpunit --filter testDivisionByZero --testdox"
-        ],
-        "validate-submission": [
-            "composer install --no-dev --optimize-autoloader",
-            "scripts/secure-grading-report.sh",
-            "echo 'Validación completada'"
-        ]
+        "serve": "php -S localhost:8000 -t public"
     }
 }
