@@ -16,15 +16,16 @@ Este es un entorno de desarrollo completo para ejercicios PHP con tests automát
 ## 📁 Estructura del Proyecto
 
 ```
-$PROJECT_ROOT/
+Servidor/
 ├── .devcontainer/          # Configuración del devcontainer 
-├── exercises/              # 📝 Ejercicios para completar (trabajar aquí)
+├── exercises/              # 📝 Realizar ejercicios aquí
+├── tasks/                  # 📝 Requerimientos de ejercicios
 ├── tests/                  # 🧪 Tests automáticos
 ├── public/                 # 🌐 Archivos web públicos
 ├── vendor/                 # 📦 Dependencias de Composer
-├── phpunit.xml            # ⚙️ Configuración de PHPUnit
-├── composer.json          # 📋 Dependencias del proyecto
-└── README.md              # 📚 Este archivo
+├── phpunit.xml             # ⚙️ Configuración de PHPUnit
+├── composer.json           # 📋 Dependencias del proyecto
+└── README.md               # 📚 Este archivo
 ```
 
 ## 🏃‍♂️ Inicio Rápido
@@ -46,27 +47,7 @@ class Calculator {
 }
 ```
 
-### 2. Tests Automáticos
-
-Los tests están en la carpeta `tests/`:
-
-```php
-// tests/CalculatorTest.php
-<?php
-namespace Tests;
-
-use PHPUnit\Framework\TestCase;
-use Exercises\Calculator;
-
-class CalculatorTest extends TestCase {
-    public function testAddition(): void {
-        $calc = new Calculator();
-        $this->assertEquals(5, $calc->add(2, 3));
-    }
-}
-```
-
-### 3. Comandos Útiles
+### 2. Comandos Útiles
 
 ```bash
 # Ejecutar todos los tests
@@ -131,17 +112,10 @@ Una vez iniciado el codespace, puedes acceder a:
 ## 🎯 Flujo de Corrección Automática
 
 1. **Desarrollo**: Estudiante implementa en `exercises/`
-2. **Testing**: Sistema ejecuta tests automáticamente
-3. **Feedback**: Resultados visibles en tiempo real
-4. **Evaluación**: Profesor puede comparar con `solutions/`
+2. **Testing**: Estudiante jecuta tests y verifica resultados
+3. **Feedback**: Resultados visibles en tiempo real con resultados estimados.
 
 ## ⚙️ Configuración Avanzada
-
-### PHPUnit Configuration
-El archivo `phpunit.xml` está configurado para:
-- Tests con colores y formato testdox
-- Coverage reports
-- Exportación de resultados a HTML y XML
 
 ### Composer Scripts
 - `test`: Ejecuta PHPUnit básico
@@ -151,7 +125,7 @@ El archivo `phpunit.xml` está configurado para:
 - `style-fix`: PHP_CodeBulkFixer automático
 - `serve`: Servidor PHP en puerto 8000
 
-## 🐛 Troubleshooting
+## 🐛 Soluciones rápidas a problemas
 
 ### Tests no se ejecutan
 ```bash
@@ -166,7 +140,7 @@ php -S localhost:8000 -t public
 
 ### Problemas de permisos
 ```bash
-sudo chmod -R 755 $PROJECT_ROOT
+sudo chmod -R 755 
 ```
 
 ## 📚 Recursos Adicionales

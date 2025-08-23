@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/workspaces/prueba2/phpunit.xml" tests="9" assertions="13" errors="0" failures="0" skipped="0" time="0.005079">
-    <testsuite name="Exercises" tests="9" assertions="13" errors="0" failures="0" skipped="0" time="0.005079">
-      <testsuite name="Tests\CalculatorTest" file="/workspaces/prueba2/tests/CalculatorTest.php" tests="9" assertions="13" errors="0" failures="0" skipped="0" time="0.005079">
-        <testcase name="testAddition" file="/workspaces/prueba2/tests/CalculatorTest.php" line="17" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.002380"/>
-        <testcase name="testSubtraction" file="/workspaces/prueba2/tests/CalculatorTest.php" line="23" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000252"/>
-        <testcase name="testMultiplication" file="/workspaces/prueba2/tests/CalculatorTest.php" line="29" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000282"/>
-        <testcase name="testDivision" file="/workspaces/prueba2/tests/CalculatorTest.php" line="35" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000230"/>
-        <testcase name="testDivisionByZero" file="/workspaces/prueba2/tests/CalculatorTest.php" line="41" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000507"/>
-        <testsuite name="Tests\CalculatorTest::testCalculationsWithDataProvider" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.001428">
-          <testcase name="testCalculationsWithDataProvider with data set #0" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000344"/>
-          <testcase name="testCalculationsWithDataProvider with data set #1" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000388"/>
-          <testcase name="testCalculationsWithDataProvider with data set #2" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000342"/>
-          <testcase name="testCalculationsWithDataProvider with data set #3" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000355"/>
+  <testsuite name="/workspaces/prueba2/phpunit.xml" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.002750">
+    <testsuite name="Exercises" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.002750">
+      <testsuite name="Tests\CalculatorTest" file="/workspaces/prueba2/tests/CalculatorTest.php" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.002750">
+        <testsuite name="Tests\CalculatorTest::testCalculationsWithDataProvider" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.002750">
+          <testcase name="testCalculationsWithDataProvider with data set #0" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.002152"/>
+          <testcase name="testCalculationsWithDataProvider with data set #1" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000261"/>
+          <testcase name="testCalculationsWithDataProvider with data set #2" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000182"/>
+          <testcase name="testCalculationsWithDataProvider with data set #3" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000155"/>
         </testsuite>
       </testsuite>
     </testsuite>

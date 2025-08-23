@@ -24,7 +24,8 @@ $reportPath = '../reports/autograding-report.md';
     </style>
     <script>
         function runAutograding() {
-            document.getElementById('results').innerHTML = '<div class="loading">🔄 Ejecutando autograding... esto puede tomar unos minutos.</div>';
+            window.location.hash = '#view-results';
+            document.getElementById('results').innerHTML = '<div class="loading"><img src="images/loading.gif" alt="Loading" /><p>🔄 Ejecutando autograding... esto puede tomar unos minutos.</p></div>';
             
             fetch('run-autograding.php')
                 .then(response => response.text())
@@ -38,6 +39,7 @@ $reportPath = '../reports/autograding-report.md';
     </script>
 </head>
 <body>
+    <img src="images/loading.gif" style="display: none;" />
     <div class="container">
         <h1>📊 Reporte de Autograding</h1>
         
@@ -195,8 +197,8 @@ $reportPath = '../reports/autograding-report.md';
             <?php
         }
         ?>
-
-        <h2>Resultados</h2>
+       
+        <h2 id="view-results">Resultados</h2>
         <div id="results">
             <p>Haz clic en "Ejecutar Autograding" para ver los resultados de evaluación.</p>
         </div>

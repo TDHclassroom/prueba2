@@ -12,8 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Exercises\\": "exercises/",
-            "Solutions\\": "solutions/"
+            "Exercises\\": "exercises/"
         }
     },
     "autoload-dev": {
@@ -24,9 +23,9 @@
     "scripts": {
         "test": "phpunit",
         "test-watch": "phpunit --testdox",
-        "analyze": "phpstan analyse exercises solutions --level=8",
-        "style-check": "phpcs exercises solutions --standard=PSR12",
-        "style-fix": "phpcbf exercises solutions --standard=PSR12",
+        "analyze": "phpstan analyse exercises --level=8",
+        "style-check": "phpcs exercises --standard=PSR12",
+        "style-fix": "phpcbf exercises --standard=PSR12",
         "serve": "php -S localhost:8000 -t public"
     }
 }

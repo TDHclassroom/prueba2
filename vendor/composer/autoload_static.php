@@ -17,10 +17,6 @@ class ComposerStaticInit5d7f0b32d8713ac61fe1c4e72d286d71
         array (
             'Tests\\' => 6,
         ),
-        'S' => 
-        array (
-            'Solutions\\' => 10,
-        ),
         'P' => 
         array (
             'PhpParser\\' => 10,
@@ -39,10 +35,6 @@ class ComposerStaticInit5d7f0b32d8713ac61fe1c4e72d286d71
         'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
-        ),
-        'Solutions\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/solutions',
         ),
         'PhpParser\\' => 
         array (
