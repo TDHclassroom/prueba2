@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/workspaces/prueba2/phpunit.xml" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.002750">
-    <testsuite name="Exercises" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.002750">
-      <testsuite name="Tests\CalculatorTest" file="/workspaces/prueba2/tests/CalculatorTest.php" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.002750">
-        <testsuite name="Tests\CalculatorTest::testCalculationsWithDataProvider" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.002750">
-          <testcase name="testCalculationsWithDataProvider with data set #0" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.002152"/>
-          <testcase name="testCalculationsWithDataProvider with data set #1" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000261"/>
-          <testcase name="testCalculationsWithDataProvider with data set #2" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000182"/>
-          <testcase name="testCalculationsWithDataProvider with data set #3" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000155"/>
+  <testsuite name="/workspaces/prueba2/phpunit.xml" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.001672">
+    <testsuite name="Exercises" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.001672">
+      <testsuite name="Tests\CalculatorTest" file="/workspaces/prueba2/tests/CalculatorTest.php" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.001672">
+        <testsuite name="Tests\CalculatorTest::testCalculationsWithDataProvider" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.001672">
+          <testcase name="testCalculationsWithDataProvider with data set #0" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.001289"/>
+          <testcase name="testCalculationsWithDataProvider with data set #1" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000137"/>
+          <testcase name="testCalculationsWithDataProvider with data set #2" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000140"/>
+          <testcase name="testCalculationsWithDataProvider with data set #3" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000105"/>
         </testsuite>
       </testsuite>
     </testsuite>
