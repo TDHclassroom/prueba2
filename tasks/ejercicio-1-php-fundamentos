@@ -1,0 +1,129 @@
+# Ejercicio 1: Fundamentos de PHP - Tipos de Datos
+
+## Objetivo
+
+El objetivo de este ejercicio es comprender y trabajar con los tipos de datos fundamentales en PHP según la documentación oficial. Aprenderás a identificar, verificar y convertir entre diferentes tipos de datos, así como utilizar las funciones built-in de PHP para el manejo de tipos.
+
+**Documentación de referencia:** https://www.php.net/manual/es/language.types.intro.php
+
+## Conocimientos que se evaluarán
+
+### 1. Tipos Escalares
+
+- **Boolean**: `true` y `false`
+- **Integer**: Números enteros (ej: `42`, `0`, `-10`)
+- **Float**: Números de punto flotante (ej: `3.14`, `0.0`)
+- **String**: Cadenas de texto (ej: `'PHP'`, `""`, `'0'`)
+
+### 2. Tipos Compuestos
+
+- **Array**: Arreglos indexados y asociativos (ej: `[]`, `[1, 2, 3]`, `['key' => 'value']`)
+- **Object**: Instancias de clases (ej: `new stdClass()`)
+
+### 3. Tipos Especiales
+
+- **NULL**: Representa una variable sin valor
+- **Resource**: Referencias a recursos externos (archivos, conexiones DB, etc.)
+
+### 4. Funciones de Verificación de Tipos
+
+- `gettype()`: Retorna el tipo de una variable como string
+- `is_bool()`, `is_int()`, `is_float()`, `is_string()`, `is_array()`, `is_object()`, `is_null()`
+- `isset()`: Verifica si una variable está definida y no es NULL
+- `empty()`: Verifica si una variable está "vacía"
+
+### 5. Conversiones de Tipos (Type Casting)
+
+- `(bool)` o `(boolean)`: Conversión a boolean
+- `(int)` o `(integer)`: Conversión a integer
+- `(float)` o `(double)`: Conversión a float
+- `(string)`: Conversión a string
+
+### 6. Comparaciones
+
+- `===`: Comparación estricta (valor y tipo)
+- `==`: Comparación suave (solo valor, con conversión automática)
+
+## Instrucciones
+
+1. **Archivo de trabajo**: `/exercises/PhpDataTypes.php`
+2. **Archivo de tests**: `/tests/PhpDataTypesTest.php`
+
+3. **Implementar los siguientes métodos**:
+   - `getDataType($variable)`: Usar `gettype()` para retornar el tipo
+   - `isBool($variable)`, `isInteger($variable)`, `isFloat($variable)`, etc.: Verificar tipos específicos
+   - `convertToBool($variable)`, `convertToInt($variable)`, etc.: Convertir entre tipos
+   - `createMixedArray()`: Crear un array con diferentes tipos de datos
+   - `isSet($variable)`, `isEmpty($variable)`: Verificar estado de variables
+   - `getVarDump($variable)`: Capturar salida de `var_dump()`
+   - `strictEquals($a, $b)`, `looseEquals($a, $b)`: Comparaciones estrictas y suaves
+
+## Valores que se consideran FALSE en conversiones booleanas
+
+- `boolean false`
+- `integer 0`
+- `float 0.0`
+- `string ""` (cadena vacía)
+- `string "0"`
+- `array []` (array vacío)
+- `NULL`
+
+## Valores que se consideran "empty()"
+
+Los mismos que se convierten a FALSE, más variables no definidas.
+
+## Ejemplos de conversiones de tipos
+
+```php
+// Boolean conversion
+(bool) 1;        // true
+(bool) 0;        // false
+(bool) "PHP";    // true
+(bool) "";       // false
+(bool) [];       // false
+
+// Integer conversion
+(int) true;      // 1
+(int) false;     // 0
+(int) 3.14;      // 3
+(int) "42";      // 42
+(int) "42abc";   // 42
+
+// String conversion
+(string) 42;     // "42"
+(string) true;   // "1"
+(string) false;  // ""
+(string) null;   // ""
+```
+
+## Ejecución de Tests
+
+Para ejecutar los tests de este ejercicio:
+
+```bash
+# Ejecutar todos los tests
+composer test
+
+# Ejecutar solo el test de este ejercicio
+./vendor/bin/phpunit tests/PhpDataTypesTest.php
+
+# Ejecutar con detalles
+./vendor/bin/phpunit tests/PhpDataTypesTest.php --verbose
+```
+
+## Criterios de Evaluación
+
+- ✅ Correcta implementación de funciones de verificación de tipos
+- ✅ Correcta implementación de conversiones de tipos
+- ✅ Comprensión de la diferencia entre `==` y `===`
+- ✅ Uso apropiado de `isset()` y `empty()`
+- ✅ Manejo correcto de valores especiales (`null`, arrays vacíos, strings vacíos)
+- ✅ Todos los tests deben pasar
+
+## Recursos Adicionales
+
+- [Documentación oficial de tipos PHP](https://www.php.net/manual/es/language.types.intro.php)
+- [Comparación de tipos en PHP](https://www.php.net/manual/es/types.comparisons.php)
+- [Funciones de variables en PHP](https://www.php.net/manual/es/ref.var.php)
+
+¡Buena suerte programando con PHP!

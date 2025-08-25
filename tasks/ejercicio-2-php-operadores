@@ -1,0 +1,38 @@
+# Ejercicio 2: Uso de tablas HTML
+
+## Objetivo
+El objetivo de este ejercicio es crear una página HTML que demuestre el uso de elementos de tabla con encabezados, datos organizados y caption. Aprenderás cómo estructurar información tabular de manera correcta y semánticamente apropiada.
+
+## Instrucciones
+
+1. Crear la carpeta `docs/ejercicio-18` si no existe.
+2. Crear un archivo `tabla.html` ubicado en la carpeta `docs/ejercicio-18`.
+3. El archivo debe contener la estructura HTML básica completa:
+   - Declaración DOCTYPE HTML5
+   - Elemento html principal
+   - Elemento head con título de la página
+   - Elemento body
+4. Dentro del body, agrega los siguientes elementos:
+   - Un encabezado principal de nivel uno con el texto "Datos de Estudiantes de Informática"
+   - Una tabla que contenga el atributo `border="1"` y que incluya:
+     - Un encabezado de tabla (`<thead>`) con una fila que incluya las siguientes columnas:
+       - "ID"
+       - "Nombre"
+       - "Apellido"
+       - "Edad"
+       - "Especialidad"
+     - Un cuerpo de tabla (`<tbody>`) con al menos 5 filas de datos de estudiantes ficticios relacionados con informática
+     - Usar elementos `<th>` para los encabezados de columna
+     - Usar elementos `<td>` para los datos de las celdas
+5. Los datos de ejemplo pueden incluir especialidades como: "Desarrollo Web", "Bases de Datos", "Programación", "Redes", "Ciberseguridad"
+6. Guarda tus cambios.
+
+## Entrega
+
+Una vez que hayas completado el ejercicio ejecuta:
+```bash
+npm test ejercicio/18
+```
+Si pasa todos los test, haz commit de tus cambios y súbelos a tu repositorio de GitHub. Asegúrate de probar tu página HTML en un navegador web para verificar que la tabla se muestre correctamente.
+
+¡Buena suerte y diviértete programando!
