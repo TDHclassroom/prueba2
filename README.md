@@ -1,3 +1,4 @@
+
 # 🧪 PHP Exercises - Testing Environment
 
 Este es un entorno de desarrollo completo para ejercicios PHP con tests automáticos, configurado con GitHub Codespaces y devcontainer.

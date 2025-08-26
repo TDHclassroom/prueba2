@@ -27,5 +27,8 @@
         "style-check": "phpcs exercises --standard=PSR12",
         "style-fix": "phpcbf exercises --standard=PSR12",
         "serve": "php -S localhost:8000 -t public"
+    },
+    "config": {
+        "process-timeout": 1200
     }
 }
