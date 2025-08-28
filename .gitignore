@@ -8,7 +8,7 @@
 # Mantener el directorio exercises aunque esté vacío
 !exercises/
 # Composer
-vendor/
+/vendor/
 composer.phar
 composer.lock.tmp
 

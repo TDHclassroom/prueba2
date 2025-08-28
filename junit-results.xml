@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/workspaces/prueba2/phpunit.xml" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.063804">
-    <testsuite name="Exercises" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.063804">
-      <testsuite name="Tests\CalculatorTest" file="/workspaces/prueba2/tests/CalculatorTest.php" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.063804">
-        <testsuite name="Tests\CalculatorTest::testCalculationsWithDataProvider" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.063804">
-          <testcase name="testCalculationsWithDataProvider with data set #0" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.063492"/>
-          <testcase name="testCalculationsWithDataProvider with data set #1" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000188"/>
-          <testcase name="testCalculationsWithDataProvider with data set #2" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000069"/>
-          <testcase name="testCalculationsWithDataProvider with data set #3" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000055"/>
+  <testsuite name="/workspaces/prueba2/phpunit.xml" tests="40" assertions="161" errors="0" failures="0" skipped="0" time="0.129965">
+    <testsuite name="Exercises" tests="40" assertions="161" errors="0" failures="0" skipped="0" time="0.129965">
+      <testsuite name="Tests\CalculatorTest" file="/workspaces/prueba2/tests/CalculatorTest.php" tests="9" assertions="13" errors="0" failures="0" skipped="0" time="0.101556">
+        <testcase name="testAddition" file="/workspaces/prueba2/tests/CalculatorTest.php" line="17" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.088854"/>
+        <testcase name="testSubtraction" file="/workspaces/prueba2/tests/CalculatorTest.php" line="23" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000253"/>
+        <testcase name="testMultiplication" file="/workspaces/prueba2/tests/CalculatorTest.php" line="29" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000271"/>
+        <testcase name="testDivision" file="/workspaces/prueba2/tests/CalculatorTest.php" line="35" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.000169"/>
+        <testcase name="testDivisionByZero" file="/workspaces/prueba2/tests/CalculatorTest.php" line="41" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="1" time="0.011168"/>
+        <testsuite name="Tests\CalculatorTest::testCalculationsWithDataProvider" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.000841">
+          <testcase name="testCalculationsWithDataProvider with data set #0" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000241"/>
+          <testcase name="testCalculationsWithDataProvider with data set #1" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000195"/>
+          <testcase name="testCalculationsWithDataProvider with data set #2" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000224"/>
+          <testcase name="testCalculationsWithDataProvider with data set #3" file="/workspaces/prueba2/tests/CalculatorTest.php" line="50" class="Tests\CalculatorTest" classname="Tests.CalculatorTest" assertions="2" time="0.000180"/>
+        </testsuite>
+      </testsuite>
+      <testsuite name="Tests\PhpDataTypesTest" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" tests="31" assertions="148" errors="0" failures="0" skipped="0" time="0.028409">
+        <testcase name="testGetDataType" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="21" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="7" time="0.003465"/>
+        <testcase name="testIsBool" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="35" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="6" time="0.009185"/>
+        <testcase name="testIsInteger" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="48" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="6" time="0.000186"/>
+        <testcase name="testIsFloat" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="61" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="6" time="0.000180"/>
+        <testcase name="testIsString" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="74" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="6" time="0.000244"/>
+        <testcase name="testIsArray" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="87" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="6" time="0.000214"/>
+        <testcase name="testIsObject" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="100" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="5" time="0.000172"/>
+        <testcase name="testIsNull" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="112" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="5" time="0.000180"/>
+        <testcase name="testConvertToBool" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="124" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="13" time="0.000249"/>
+        <testcase name="testConvertToInt" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="147" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="7" time="0.000201"/>
+        <testcase name="testConvertToFloat" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="161" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="7" time="0.000200"/>
+        <testcase name="testConvertToString" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="175" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="6" time="0.000213"/>
+        <testcase name="testCreateMixedArray" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="188" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="8" time="0.005001"/>
+        <testcase name="testIsSet" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="214" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="5" time="0.000173"/>
+        <testcase name="testIsEmpty" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="229" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="11" time="0.000326"/>
+        <testcase name="testGetVarDump" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="250" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="3" time="0.005466"/>
+        <testcase name="testStrictEquals" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="265" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="7" time="0.000198"/>
+        <testcase name="testLooseEquals" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="281" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="8" time="0.000223"/>
+        <testsuite name="Tests\PhpDataTypesTest::testVariousTypes" tests="13" assertions="26" errors="0" failures="0" skipped="0" time="0.002333">
+          <testcase name="testVariousTypes with data set #0" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000206"/>
+          <testcase name="testVariousTypes with data set #1" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000166"/>
+          <testcase name="testVariousTypes with data set #2" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000163"/>
+          <testcase name="testVariousTypes with data set #3" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000158"/>
+          <testcase name="testVariousTypes with data set #4" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000159"/>
+          <testcase name="testVariousTypes with data set #5" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000159"/>
+          <testcase name="testVariousTypes with data set #6" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000161"/>
+          <testcase name="testVariousTypes with data set #7" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000159"/>
+          <testcase name="testVariousTypes with data set #8" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000160"/>
+          <testcase name="testVariousTypes with data set #9" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000307"/>
+          <testcase name="testVariousTypes with data set #10" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000188"/>
+          <testcase name="testVariousTypes with data set #11" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000187"/>
+          <testcase name="testVariousTypes with data set #12" file="/workspaces/prueba2/tests/PhpDataTypesTest.php" line="302" class="Tests\PhpDataTypesTest" classname="Tests.PhpDataTypesTest" assertions="2" time="0.000160"/>
         </testsuite>
       </testsuite>
     </testsuite>
