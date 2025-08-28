@@ -3,7 +3,7 @@
         'name' => 'php-exercises/testing-environment',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c87fe493fb1b6f7440d87f14062fe8cd9da34aad',
+        'reference' => '71be7e87cf4b682094e1ddaf3805675fb5c0a729',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -49,7 +49,7 @@
         'php-exercises/testing-environment' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c87fe493fb1b6f7440d87f14062fe8cd9da34aad',
+            'reference' => '71be7e87cf4b682094e1ddaf3805675fb5c0a729',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

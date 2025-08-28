@@ -26,7 +26,11 @@
         "analyze": "phpstan analyse exercises --level=8",
         "style-check": "phpcs exercises --standard=PSR12",
         "style-fix": "phpcbf exercises --standard=PSR12",
-        "serve": "php -S localhost:8000 -t public"
+        "serve": "php -S 0.0.0.0:8000 -t public",
+        "autograding": "@php -r \"exec('./scripts/secure-grading-report.sh 2>&1', \\$output, \\$return); echo implode(PHP_EOL, \\$output);\"",
+        "fix-line-endings": "@php -r \"exec('find vendor/bin -type f -exec sed -i \\'s/\\r$/\\' {} \\; 2>/dev/null || true');\"",
+        "post-install-cmd": "@fix-line-endings",
+        "post-update-cmd": "@fix-line-endings"
     },
     "config": {
         "process-timeout": 1200

@@ -1,6 +1,6 @@
 # 📊 Reporte de Autograding Seguro
 
-**Fecha:** 2025-08-26 17:07:02  
+**Fecha:** 2025-08-27 15:38:56  
 **Configuración:** `.github/classroom/autograding.json`  
 **Tests:** 11  
 **Puntos máximos:** 2.28  
@@ -14,19 +14,19 @@
 - ✅ **Test División (Division)** (0.16/0.16 puntos)
 - ✅ **Test División por Cero (Division by Zero)** (0.16/0.16 puntos)
 - ✅ **Tests con Data Provider** (0.4/0.4 puntos)
-- ✅ **Verificación de Estilo de Código PSR-12** (0.24/0.24 puntos)
+- ❌ **Verificación de Estilo de Código PSR-12** (0/0.24 puntos)
 
 ## Resumen Final
 
-**Puntuación:** 1.62/2.28 puntos (71.05%)
+**Puntuación:** 1.38/2.28 puntos (60.53%)
 
 ### Evaluación
-👍 **BIEN** - Cumple requisitos
+⚠️ **SUFICIENTE** - Necesita mejoras
 
 ### Información Técnica
 - **Script:** Versión segura (sin eval)
 - **Comandos validados:** Sí
 - **Archivos verificados:** Sí  
 - **Timeout máximo:** 300s
-- **Generado:** Tue Aug 26 05:07:05 PM UTC 2025
+- **Generado:** Wed Aug 27 03:39:32 PM UTC 2025
 

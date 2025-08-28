@@ -28,18 +28,30 @@ if (!$scriptToUse) {
     ob_end_clean();
     $scriptName = 'composer autograding';
 } else {
-    // Asegurar que el script tenga permisos ejecutables
-    if (!chmod($scriptToUse, 0755)) {
-        // Si falla el chmod, intentar con composer
-        ob_start();
-        $output = shell_exec('composer autograding 2>&1');
-        ob_end_clean();
-        $scriptName = 'composer autograding (fallback)';
+    // Verificar si el script ya es ejecutable
+    $isExecutable = is_executable($scriptToUse);
+
+    // Solo intentar chmod si no es ejecutable
+    if (!$isExecutable) {
+        // Suprimir errores de chmod y usar @ para evitar warnings
+        $chmodSuccess = @chmod($scriptToUse, 0755);
+        $isExecutable = is_executable($scriptToUse);
     } else {
+        $chmodSuccess = true; // Ya es ejecutable, no necesita chmod
+    }
+
+    // Si el archivo es ejecutable (con o sin chmod), ejecutarlo
+    if ($isExecutable) {
         // Ejecutar el script encontrado
         ob_start();
         $output = shell_exec('./' . str_replace($projectDir . '/', '', $scriptToUse) . ' 2>&1');
         ob_end_clean();
+    } else {
+        // Si falla todo, usar composer como fallback
+        ob_start();
+        $output = shell_exec('composer autograding 2>&1');
+        ob_end_clean();
+        $scriptName = 'composer autograding (fallback - chmod failed)';
     }
 }
 
@@ -54,18 +66,18 @@ $testResults = [];
 foreach ($lines as $line) {
     $line = trim($line);
     if (empty($line)) continue;
-    
+
     // Extraer puntuación (varios formatos posibles)
     if (strpos($line, 'Puntuación:') !== false || strpos($line, 'Puntuación') !== false) {
         if (preg_match('/(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?) puntos? \((\d+(?:\.\d+)?)%\)/', $line, $matches)) {
-            $score = $matches[1]. ' / ' . $matches[2];
+            $score = $matches[1] . ' / ' . $matches[2];
             $percentage = $matches[3];
         } elseif (preg_match('/(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?) \((\d+(?:\.\d+)?)%\)/', $line, $matches)) {
-            $score = $matches[1]. ' / ' . $matches[2];
+            $score = $matches[1] . ' / ' . $matches[2];
             $percentage = $matches[3];
         }
     }
-    
+
     // Formatear líneas para HTML (múltiples formatos)
     if (strpos($line, '[SUCCESS]') !== false && strpos($line, 'PASSED:') !== false) {
         // Formato del script seguro: [SUCCESS] PASSED: Test Name (+X pts)
@@ -120,61 +132,89 @@ if (file_exists($reportsPath)) {
 
 ?>
 <style>
-.score-summary {
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px 0;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-.excellent { background: #d4edda; color: #155724; border: 2px solid #28a745; }
-.good { background: #d1ecf1; color: #0c5460; border: 2px solid #17a2b8; }
-.ok { background: #fff3cd; color: #856404; border: 2px solid #ffc107; }
-.sufficient { background: #f8d7da; color: #721c24; border: 2px solid #fd7e14; }
-.failed { background: #f8d7da; color: #721c24; border: 2px solid #dc3545; }
-.test-result {
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 4px;
-    border-left: 4px solid #ccc;
-}
-.passed {
-    background: #d4edda;
-    color: #155724;
-    border-left-color: #28a745;
-}
-.failed {
-    background: #f8d7da;
-    color: #721c24;
-    border-left-color: #dc3545;
-}
+    .score-summary {
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .excellent {
+        background: #d4edda;
+        color: #155724;
+        border: 2px solid #28a745;
+    }
+
+    .good {
+        background: #d1ecf1;
+        color: #0c5460;
+        border: 2px solid #17a2b8;
+    }
+
+    .ok {
+        background: #fff3cd;
+        color: #856404;
+        border: 2px solid #ffc107;
+    }
+
+    .sufficient {
+        background: #f8d7da;
+        color: #721c24;
+        border: 2px solid #fd7e14;
+    }
+
+    .failed {
+        background: #f8d7da;
+        color: #721c24;
+        border: 2px solid #dc3545;
+    }
+
+    .test-result {
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 4px;
+        border-left: 4px solid #ccc;
+    }
+
+    .passed {
+        background: #d4edda;
+        color: #155724;
+        border-left-color: #28a745;
+    }
+
+    .failed {
+        background: #f8d7da;
+        color: #721c24;
+        border-left-color: #dc3545;
+    }
 </style>
 
 <?php if ($score): ?>
-<div class="score-summary <?php echo $scoreClass; ?>">
-    🎯 Puntuación Final: <?php echo $score; ?> puntos (<?php echo $percentage; ?>%)
-    <br>
-    <?php
-    if ($percentage >= 90) echo "🎉 ¡EXCELENTE! - Trabajo excepcional";
-    elseif ($percentage >= 80) echo "✅ ¡MUY BIEN! - Buen trabajo";
-    elseif ($percentage >= 70) echo "👍 BIEN - Cumple con los requisitos";
-    elseif ($percentage >= 60) echo "⚠️ SUFICIENTE - Necesita mejoras menores";
-    else echo "❌ INSUFICIENTE - Requiere trabajo adicional";
-    ?>
-</div>
+    <div class="score-summary <?php echo $scoreClass; ?>">
+        🎯 Puntuación Final: <?php echo $score; ?> puntos (<?php echo $percentage; ?>%)
+        <br>
+        <?php
+        if ($percentage >= 90) echo "🎉 ¡EXCELENTE! - Trabajo excepcional";
+        elseif ($percentage >= 80) echo "✅ ¡MUY BIEN! - Buen trabajo";
+        elseif ($percentage >= 70) echo "👍 BIEN - Cumple con los requisitos";
+        elseif ($percentage >= 60) echo "⚠️ SUFICIENTE - Necesita mejoras menores";
+        else echo "❌ INSUFICIENTE - Requiere trabajo adicional";
+        ?>
+    </div>
 <?php endif; ?>
 
 <h3>Resultados Detallados:</h3>
 <?php echo $htmlOutput; ?>
 
 <?php if (!empty($htmlOutput)): ?>
-<h3>Resultados Detallados:</h3>
-<?php echo $htmlOutput; ?>
+    <h3>Resultados Detallados:</h3>
+    <?php echo $htmlOutput; ?>
 <?php else: ?>
-<div class="test-result failed">
-    ⚠️ No se encontraron resultados de tests en el formato esperado.
-</div>
+    <div class="test-result failed">
+        ⚠️ No se encontraron resultados de tests en el formato esperado.
+    </div>
 <?php endif; ?>
 
 <!-- Información de debugging -->
@@ -185,20 +225,20 @@ if (file_exists($reportsPath)) {
     • Tests detectados: <?php echo count($testResults); ?><br>
     • Salida total: <?php echo strlen($output); ?> caracteres<br>
     <?php if (empty($score)): ?>
-    • ⚠️ No se detectó puntuación en la salida<br>
+        • ⚠️ No se detectó puntuación en la salida<br>
     <?php endif; ?>
 </div>
 
 <?php if (!empty($output)): ?>
-<h3>Log Completo de Ejecución:</h3>
-<pre style="background: #f8f9fa; padding: 15px; border-radius: 4px; max-height: 400px; overflow-y: auto;"><?php echo htmlspecialchars($output); ?></pre>
+    <h3>Log Completo de Ejecución:</h3>
+    <pre style="background: #f8f9fa; padding: 15px; border-radius: 4px; max-height: 400px; overflow-y: auto;"><?php echo htmlspecialchars($output); ?></pre>
 <?php endif; ?>
 
 <?php if ($markdownReport): ?>
-<h3>Reporte Detallado:</h3>
-<div style="background: #f8f9fa; padding: 15px; border-radius: 4px; max-height: 500px; overflow-y: auto;">
-    <pre><?php echo htmlspecialchars($markdownReport); ?></pre>
-</div>
+    <h3>Reporte Detallado:</h3>
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 4px; max-height: 500px; overflow-y: auto;">
+        <pre><?php echo htmlspecialchars($markdownReport); ?></pre>
+    </div>
 <?php endif; ?>
 
 <div style="margin-top: 20px; padding: 15px; background: #e7f3ff; border-radius: 4px;">
